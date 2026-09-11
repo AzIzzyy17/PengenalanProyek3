@@ -1,0 +1,120 @@
+:root {
+    --color-primary: #2457d6;
+    --color-bg: #f8fafc;
+    --color-text: #333333;
+    
+    --spacing-base: 1.5rem; 
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    font-size: 1rem; /* Ukuran ke-1 */
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-base);
+}
+
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--color-bg);
+    padding-bottom: 0.5rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-base);
+    margin-top: 1rem;
+}
+
+.nav-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.nav-link:focus-visible {
+    outline: 3px solid #f4b000;
+    outline-offset: 2px;
+}
+
+.card {
+    background-color: white;
+    padding: var(--spacing-base);
+    margin-bottom: var(--spacing-base);
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: 150px;
+    border-radius: 30%;
+    display: block;
+    margin: 0 auto 1rem auto;
+}
+
+ul {
+    padding-left: var(--spacing-base);
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.75rem var(--spacing-base);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #1a40a0;
+    text-decoration: none;
+}
+
+.button:focus-visible {
+    outline: 3px solid #f4b000;
+    outline-offset: 3px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #666;
+}

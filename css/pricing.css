@@ -1,0 +1,118 @@
+/* 1. Custom Properties (Design Tokens) */
+:root {
+    --color-bg-page: #f8fafc;
+    --color-card-bg: #ffffff;
+    --color-primary: #2457d6;
+    --color-primary-dark: #193ca0;
+    --color-text: #172033;
+    --color-border: #dbe2ea;
+    --radius-card: 12px;
+}
+
+/* 2. Global Reset & Box Model */
+* {
+    box-sizing: border-box; /* Mencegah ukuran card membesar karena padding */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-bg-page);
+    color: var(--color-text);
+    font-family: sans-serif;
+    line-height: 1.6;
+}
+
+/* 3. Layout Container */
+.container {
+    width: min(100% - 2rem, 1024px);
+    margin-inline: auto; /* Posisi ke tengah */
+    padding-top: 3rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* 4. Flexbox Layout untuk Daftar Kartu (Mobile First) */
+.pricing-list {
+    display: flex;
+    flex-direction: column; /* Tersusun atas-bawah di HP */
+    gap: 1.5rem;
+}
+
+/* 5. Reusable Class untuk Kartu */
+.price-card {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: 24px;
+    display: flex;
+    flex-direction: column; /* Mengatur isi kartu agar tombol bisa di bawah */
+}
+
+.price-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.price-card .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.price-card ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.2rem;
+    flex-grow: 1; /* Mendorong tombol ke bagian paling bawah kartu */
+}
+
+/* 6. Modifier Class khusus untuk Card Unggulan */
+.price-card--featured {
+    border: 2px solid var(--color-primary);
+    position: relative;
+}
+
+.badge {
+    background-color: var(--color-primary);
+    color: white;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+/* 7. Styling Tombol dengan Interaksi */
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.button:focus-visible {
+    outline: 3px solid #f4b000;
+    outline-offset: 3px;
+}
+
+/* 8. Media Query (Berubah jadi Baris di Layar Lebar) */
+@media (min-width: 768px) {
+    .pricing-list {
+        flex-direction: row; /* Berubah menjadi horizontal */
+        align-items: stretch; /* Tinggi kartu sama rata */
+    }
+
+    .price-card {
+        flex: 1; /* Membagi ruang sama rata (33.3%) */
+    }
+}
